@@ -1,15 +1,16 @@
 public class Zwembad {
-    private String Breedte = "2,0";
-    public String getBreedte(){
+    private double Breedte = 2.0;
+    public double getBreedte(){
         return this.Breedte;
     }
 
-    private String Lengte = "5,5";
-    public String getLengte() { return this.Lengte; }
+    private double Lengte = 5.5;
+    public double getLengte() { return this.Lengte; }
 
-    private String Diepte = "1,5";
-    public String getDiepte() { return this.Diepte; }
+    private double Diepte = 1.5;
+    public double getDiepte() { return this.Diepte; }
 
-
+    private double Inhoud =  Breedte * Lengte * Diepte;
+    public double getInhoud() { return this.Inhoud; }
 }
 
