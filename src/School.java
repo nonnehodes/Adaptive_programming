@@ -1,5 +1,5 @@
 public class School {
-    private String naam = "hu";
+    private String naam = "HU";
 
     public String getNaam(){
         return this.naam;
