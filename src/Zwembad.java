@@ -17,5 +17,14 @@ public class Zwembad {
         inhoud = bd * lg * dp;
     }
 
+    private double newBreedte = 2.5;
+    private double newLengte = 100.0;
+    private double newDiepte = 2;
+    private double newInhoud = newBreedte * newLengte * newDiepte;
+
+    public double newBreedte() { return this.newBreedte; }
+    public double newLengte() { return this.newLengte; }
+    public double newDiepte() { return this.newDiepte; }
+    public double newInhoud() { return this.newInhoud; }
 }
 

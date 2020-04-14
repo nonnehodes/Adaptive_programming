@@ -9,6 +9,13 @@ public class Main {
             System.out.println("Lengte: " + z1.getLengte());
             System.out.println("Diepte: " + z1.getDiepte());
             System.out.println("Inhoud: " + z1.inhoud());
+            System.out.println(" ");
+
+
+
+        Zwembad z2 = new Zwembad(2.5, 100.0,2.0);
+            System.out.println("Gegevens zwembad: Dit zwembad is " + z2.newBreedte() + "m breed, " + z2.newLengte() + "m lang, en " + z2.newDiepte() + "m diep.");
+            System.out.println("Inhoud: " + z2.newInhoud());
 
     }
 }
