@@ -41,13 +41,13 @@ public class AutoHuur {
         if (getHuurder() == null) {
             output = output + "er is geen huurder bekend" + "\n";
         } else {
-            output = output + getHuurder().toString();
+            output = output + getHuurder().toString() + "\n";
         }
 
         if (this.aantalDagen == null) {
             output = output + "aantal dagen: 0 en dat kost 0.0" + "\n";
         } else {
-            output = output + "aantal dagen: " + this.aantalDagen + "en dat kost " + auto.getPrijsPerDag() + "\n";
+            output = output + "aantal dagen: " + this.aantalDagen + " en dat kost " + auto.getPrijsPerDag() + "\n";
         }
         return output;
     }

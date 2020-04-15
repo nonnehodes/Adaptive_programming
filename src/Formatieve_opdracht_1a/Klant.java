@@ -17,7 +17,7 @@ public class Klant {
     }
 
     public String toString() {
-        String s = "op naam van: " + this.naam + "(korting: " + this.kortingsPercentage + ")" + "\n";
+        String s = "op naam van: " + this.naam + "(korting: " + this.kortingsPercentage + ")";
         return s;
     }
 

@@ -20,7 +20,7 @@ public class Auto {
     }
 
     public String toString() {
-        String s = this.autoType + "met prijs per dag: " + this.prijsPerDag + "\n";
+        String s = this.autoType + " met prijs per dag: " + this.prijsPerDag;
         return s;
     }
 }
