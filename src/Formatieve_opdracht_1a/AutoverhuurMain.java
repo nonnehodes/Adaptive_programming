@@ -1,6 +1,6 @@
 package Formatieve_opdracht_1a;
 
-public class AutoverhuurGameshopMain {
+public class AutoverhuurMain {
     public static void main(String[] arg) {
 
         AutoHuur ah1 = new AutoHuur();
