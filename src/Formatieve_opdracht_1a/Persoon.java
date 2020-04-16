@@ -40,7 +40,8 @@ public class Persoon {
                 output = output + "Niet gelukt";
             } else {
                 output = output + "Gelukt";
-                setBudget();
+                // buget =  budget - prijs spel
+
             }
         } else {
             output = output + "Niet gelukt";
