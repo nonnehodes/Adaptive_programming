@@ -15,8 +15,9 @@ public class Game {
     Integer releaseJaar;
     double korting;
 
-    Integer releaseJaar1 = LocalDate.now().getYear() -1;
-    Integer releaseJaar2 = LocalDate.now().getYear() -2;
+    Integer currentJaar = LocalDate.now().getYear();
+    Integer releaseJaar1 = LocalDate.now().getYear() - 1;
+    Integer releaseJaar2 = LocalDate.now().getYear() - 2;
 
 
     public Game(String gnm, Integer rj, double ps) {
@@ -25,7 +26,7 @@ public class Game {
         this.prijs = ps;
     }
 
-    public Integer getReleaseJaar(){
+    public Integer getReleaseJaar() {
         return this.releaseJaar;
     }
 
@@ -34,20 +35,19 @@ public class Game {
     }
 
     public double getPrijs() {
-        return this.prijs;
-    }
-
-
-    public double berekenKorting() {
-        if(getReleaseJaar().equals(this.releaseJaar1)) {
+        if (this.getReleaseJaar().equals(this.currentJaar)) {
+            this.korting = 0.0;
+        }
+        if (this.getReleaseJaar().equals(this.releaseJaar1)) {
             this.korting = 0.7;
-        } if (getReleaseJaar().equals(releaseJaar2)) {
+        }
+        if (this.getReleaseJaar().equals(releaseJaar2)) {
             this.korting = Math.pow(0.7, 2.0);
         }
-        return Math.round(this.prijs * this.korting);
+        return this.prijs * this.korting;
     }
 
     public String toString() {
-        return gameNaam + ", uitgegeven in " + releaseJaar + " nieuwprijs: " + prijs + " nu voor: " + berekenKorting();
+        return this.gameNaam + ", uitgegeven in " + this.releaseJaar + " nieuwprijs: " + this.prijs + " nu voor: " + String.format("%.2f", getPrijs());
     }
 }

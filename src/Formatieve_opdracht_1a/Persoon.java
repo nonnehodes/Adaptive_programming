@@ -9,10 +9,7 @@ public class Persoon {
     List games = new ArrayList<Game>();
     double budget;
     Game game;
-
-    public boolean checkIfGameBought(List<Game> games, Game game) {
-        return games.stream().anyMatch(o -> o.gameNaam.equals(game.gameNaam));
-    }
+    Helper hp = new Helper();
 
 
     public Persoon(String psn, double bg) {
@@ -23,13 +20,13 @@ public class Persoon {
     public String koop(Game gm) {
         this.game = gm;
         String output = "";
-        if (!this.checkIfGameBought(this.games, this.game)) {
+        if (!hp.checkIfGameBought(this.games, this.game)) {
             if (this.game.getPrijs() >= getBudget()) {
                 output = "Niet gelukt";
             } else {
                 output = "Gelukt";
                 this.games.add(this.game);
-                this.budget = getBudget() - this.game.berekenKorting();
+                this.budget = getBudget() - this.game.getPrijs();
                 setBudget(this.budget);
             }
         } else {
@@ -38,9 +35,8 @@ public class Persoon {
         return output;
     }
 
-    public void verkoop(Game gm, Persoon ps) {
-        this.game = gm;
-        this.persoon = ps;
+    public void verkoop(Game gm) {
+        this.games.remove(gm);
     }
 
     public void setBudget(double bg) {

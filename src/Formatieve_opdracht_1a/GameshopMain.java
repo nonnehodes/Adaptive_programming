@@ -2,11 +2,14 @@ package Formatieve_opdracht_1a;
 
 import java.time.*;
 import java.util.ArrayList;
+import java.util.List;
+
 
 public class GameshopMain {
     public static void main(String[] arg) {
-        Integer releaseJaar1 = LocalDate.now().getYear() -1;
-        Integer releaseJaar2 = LocalDate.now().getYear() -2;
+        Helper hp = new Helper();
+        Integer releaseJaar1 = LocalDate.now().getYear() - 1;
+        Integer releaseJaar2 = LocalDate.now().getYear() - 2;
 
         Game g1 = new Game("Just Cause 3", releaseJaar1, 49.98);
         Game g2 = new Game("Need for Speed: Rivals", releaseJaar2, 45.99);
@@ -24,40 +27,37 @@ public class GameshopMain {
         System.out.println("p2 koopt g1: " + p2.koop(g1));
         System.out.println("p3 koopt g3: " + p3.koop(g3));
 
-        System.out.println("\n" + "p1: "+ p1.persoonNaam + " heeft een budget van " + p1.getBudget() + " en bezit de volgende games:");
+        System.out.println("\n" + "p1: " + p1.persoonNaam + " heeft een budget van " + String.format("%.2f", p1.getBudget()) + " en bezit de volgende games:");
         for (Object item : p1.getGames()) {
             System.out.println("\t" + item.toString());
         }
 
-        System.out.println("\n" + "p2: "+ p2.persoonNaam + " heeft een budget van " + p2.getBudget() + " en bezit de volgende games:");
+        System.out.println("\n" + "p2: " + p2.persoonNaam + " heeft een budget van " + String.format("%.2f", p2.getBudget()) + " en bezit de volgende games:");
         for (Object item : p2.getGames()) {
             System.out.println("\t" + item.toString());
         }
 
-        System.out.println("\n" + "p3: "+ p3.persoonNaam + " heeft een budget van " + p3.getBudget() + " en bezit de volgende games:");
+        System.out.println("\n" + "p3: " + p3.persoonNaam + " heeft een budget van " + String.format("%.2f", p3.getBudget()) + " en bezit de volgende games:");
         for (Object item : p3.getGames()) {
             System.out.println("\t" + item.toString());
         }
 
-        p1.verkoop(g1, p3);
-        p2.verkoop(g2, p3);
-        p2.verkoop(g1, p1);
 
-        System.out.println("\np1 verkoopt g1 aan p3: "); //+ p3.verkoop(g1, p3)
-        System.out.println("\np1 verkoopt g1 aan p3: "); //+ p3.verkoop(g2, p3)
-        System.out.println("\np1 verkoopt g1 aan p1: "); //+ p1.verkoop(g1, p1)
+        System.out.println("\np1 verkoopt g1 aan p3: " + hp.doorVerkopen(g1, p1, p3));
+        System.out.println("p1 verkoopt g2 aan p3: " + hp.doorVerkopen(g2, p1, p3));
+        System.out.println("p2 verkoopt g1 aan p1: " + hp.doorVerkopen(g1, p2, p1));
 
-        System.out.println("\n" + p1.persoonNaam + " heeft een budget van " + p1.getBudget() + " en bezit de volgende games:");
+        System.out.println("\n" + p1.persoonNaam + " heeft een budget van " + String.format("%.2f", p1.getBudget()) + " en bezit de volgende games:");
         for (Object item : p1.getGames()) {
             System.out.println("\t" + item.toString());
         }
 
-        System.out.println("\n" + p2.persoonNaam + " heeft een budget van " + p2.getBudget() + " en bezit de volgende games:");
+        System.out.println("\n" + p2.persoonNaam + " heeft een budget van " + String.format("%.2f", p2.getBudget()) + " en bezit de volgende games:");
         for (Object item : p2.getGames()) {
             System.out.println("\t" + item.toString());
         }
 
-        System.out.println("\n" + p3.persoonNaam + " heeft een budget van " + p3.getBudget() + " en bezit de volgende games:");
+        System.out.println("\n" + p3.persoonNaam + " heeft een budget van " + String.format("%.2f", p3.getBudget()) + " en bezit de volgende games:");
         for (Object item : p3.getGames()) {
             System.out.println("\t" + item.toString());
         }
