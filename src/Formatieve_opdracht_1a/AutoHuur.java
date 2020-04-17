@@ -26,7 +26,7 @@ public class AutoHuur {
     }
 
     public double totaalPrijs() {
-        return 10.0;
+        return auto.getPrijsPerDag()*aantalDagen - auto.getPrijsPerDag()*aantalDagen*(klant.getKorting()/100);
     }
 
 
@@ -47,7 +47,7 @@ public class AutoHuur {
         if (this.aantalDagen == null) {
             output = output + "aantal dagen: 0 en dat kost 0.0" + "\n";
         } else {
-            output = output + "aantal dagen: " + this.aantalDagen + " en dat kost " + auto.getPrijsPerDag() + "\n";
+            output = output + "aantal dagen: " + this.aantalDagen + " en dat kost " + totaalPrijs() + "\n";
         }
         return output;
     }
