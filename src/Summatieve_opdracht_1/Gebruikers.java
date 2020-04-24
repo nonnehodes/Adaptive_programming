@@ -3,9 +3,13 @@ package Summatieve_opdracht_1;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Gebruikers {
+public class Gebruikers implements Namen{
     private String gebruikersNaam;
     private List gekekenFilms = new ArrayList<Film>();
+
+    public String getNaam() {
+        return this.gebruikersNaam;
+    }
 
     public void setGekekenFilms(Film fm) {
         if (!checkIfFilmWatched(this.getGekekenFilms(), fm)) {
@@ -22,16 +26,16 @@ public class Gebruikers {
     }
 
     public boolean checkIfFilmWatched(List<Film> gekekenFilms, Film film) {
-        return gekekenFilms.stream().anyMatch(o -> o.getFilmNaam().equals(film.getFilmNaam()));
+        return gekekenFilms.stream().anyMatch(o -> o.getNaam().equals(film.getNaam()));
     }
 
     public String kijktFilm(Film film) {
         String output = "";
         if (!checkIfFilmWatched(this.getGekekenFilms(), film)) {
-            output = this.gebruikersNaam + " kijkt " + film.getFilmNaam() + "\n";
+            output = this.gebruikersNaam + " kijkt " + film.getNaam() + "\n";
             this.setGekekenFilms(film);
         } else {
-            output = this.gebruikersNaam + " heeft " + film.getFilmNaam() + " al gezien" + "\n";
+            output = this.gebruikersNaam + " heeft " + film.getNaam() + " al gezien" + "\n";
         }
         return output;
     }
@@ -39,7 +43,7 @@ public class Gebruikers {
     public String toString() {
         String v = this.gebruikersNaam + " heeft de volgende films gekeken: \n";
         for (Film fm : this.getGekekenFilms()) {
-            v += "- " + (fm.getFilmNaam() + ". Met als hoofdrolspeler " + fm.getHoofdrol() +
+            v += "- " + (fm.getNaam() + ". Met als hoofdrolspeler " + fm.getHoofdrol() +
                     ". De film is uitgegeven door " + fm.getFilmStudio() + " in " + fm.getFilmJaar() + " en komt uit de genre " + fm.getGenre()) + ". \n";
         }
         return v;

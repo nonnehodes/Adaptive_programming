@@ -1,14 +1,14 @@
 package Summatieve_opdracht_1;
 
-public class Hoofdrol {
+public class Hoofdrol implements Namen {
     private String acteurNaam;
 
-    public String getActeurNaam() {
-        return acteurNaam;
+    public String getNaam() {
+        return this.acteurNaam;
     }
 
     public Hoofdrol(String an) {
-        acteurNaam = an;
+        this.acteurNaam = an;
     }
 
 

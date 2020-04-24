@@ -1,6 +1,6 @@
 package Summatieve_opdracht_1;
 
-public class Film {
+public class Film implements Namen{
     private String filmNaam;
     private Genre genre;
     private Filmstudio filmstudio;
@@ -8,19 +8,19 @@ public class Film {
     private Integer filmJaar;
 
     public String getGenre() {
-        return this.genre.getGenre();
+        return this.genre.getNaam();
     }
 
     public String getFilmStudio() {
-        return this.filmstudio.getStudioNaam();
+        return this.filmstudio.getNaam();
     }
 
     public String getHoofdrol() {
-        return this.acteur.getActeurNaam();
+        return this.acteur.getNaam();
     }
 
-    public String getFilmNaam() {
-        return filmNaam;
+    public String getNaam() {
+        return this.filmNaam;
     }
 
     public Integer getFilmJaar() {

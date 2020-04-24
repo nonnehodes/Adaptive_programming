@@ -1,14 +1,14 @@
 package Summatieve_opdracht_1;
 
-public class Genre {
+public class Genre implements Namen{
     private String genreNaam;
 
-    public String getGenre() {
-        return genreNaam;
+    public String getNaam() {
+        return this.genreNaam;
     }
 
     public Genre(String gn){
-        genreNaam = gn;
+        this.genreNaam = gn;
     }
 
 }

@@ -1,10 +1,10 @@
 package Summatieve_opdracht_1;
 
-public class Filmstudio {
+public class Filmstudio implements Namen {
     private String studioNaam;
 
-    public String getStudioNaam() {
-        return studioNaam;
+    public String getNaam() {
+        return this.studioNaam;
     }
 
     public Filmstudio(String sn) {
