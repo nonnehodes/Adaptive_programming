@@ -1,7 +1,8 @@
-import java.awt.*;
+package troep;
+
 public class Main {
     public static void main(String[] args) {
-        //School hu = new School();
+        //troep.School hu = new troep.School();
         //System.out.println( "Schoolnaam: " + hu.getNaam());
 
         Zwembad z1 = new Zwembad(2.0, 5.5, 1.5);

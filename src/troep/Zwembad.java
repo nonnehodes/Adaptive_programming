@@ -1,3 +1,5 @@
+package troep;
+
 public class Zwembad {
     private double Breedte;
     private double Lengte;
