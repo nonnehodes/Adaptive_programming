@@ -18,7 +18,8 @@ public class Main {
 
 
         FSM fsm = new FSM(nodes);
-        String input = "BAAB";
+        String input = "BBA";
+        System.out.println("Input string is: " + input);
         fsm.run(input);
     }
 }
