@@ -1,26 +1,24 @@
 package Formatieve_opdracht_2a;
 
 public class Node {
-    private Node nodeA;
-    private Node nodeB;
+    private String nodeA;
+    private String nodeB;
     private String naam;
 
-    public Node(String nm){
-        naam = nm;
+    public Node(String nm, String a, String b){
+        this.naam = nm;
+        this.nodeA = a;
+        this.nodeB = b;
     }
 
-    public void setNodeA(Node n){
-        nodeA = n;
+    public String getNaam() {
+        return this.naam;
     }
 
-    public void setNodeB(Node n){
-        nodeB = n;
-    }
-
-    public Node getNodeA(){
+    public String getNodeA(){
         return this.nodeA;
     }
-    public Node getNodeB(){
+    public String getNodeB(){
         return this.nodeB;
     }
 
