@@ -1,8 +1,6 @@
 package Formatieve_opdracht_2a;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 public class FSM {
     private ArrayList<Node> nodes;
@@ -41,7 +39,6 @@ public class FSM {
                     }
                 }
             }
-
         }
         if (failed == true) {
             System.out.println("For node: " + this.outputNodes.get(this.outputNodes.size() - 1));
