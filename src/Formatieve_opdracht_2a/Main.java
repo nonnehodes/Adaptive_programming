@@ -16,7 +16,6 @@ public class Main {
         nodes.add(s2);
         nodes.add(s3);
 
-
         FSM fsm = new FSM(nodes);
         String input = "BBA";
         System.out.println("Input string is: " + input);
