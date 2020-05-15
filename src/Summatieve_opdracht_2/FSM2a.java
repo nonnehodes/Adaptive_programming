@@ -10,7 +10,7 @@ public class FSM2a {
         this.nodes = allNodes;
     }
 
-    public void run(String input) {
+    public ArrayList<String> run(String input) {
        Node huidigeNode = this.nodes.get(0);
        this.outputNodes.add(huidigeNode.getNaam());
        for (char ch: input.toLowerCase().toCharArray()) {
@@ -22,6 +22,8 @@ public class FSM2a {
                break;
            }
        }
-       System.out.println(this.outputNodes);
+//       System.out.println(this.outputNodes);
+        return this.outputNodes;
     }
+
 }

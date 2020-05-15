@@ -30,4 +30,15 @@ class MCM2bTest {
         assertTrue(high >= random, "Error, random is too high");
         assertTrue(low  <= random, "Error, random is too low");
     }
+
+
+    @Test
+    void run() {
+        Helpers hp = new Helpers();
+        Node node = hp.getMCMNode(4);
+        MCM2b mcm = new MCM2b(node);
+
+        assertTrue(mcm.run().equals("1") || mcm.run().equals("2") || mcm.run().equals("3") || mcm.run().equals("4"));
+
+    }
 }

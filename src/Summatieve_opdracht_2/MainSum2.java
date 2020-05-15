@@ -7,9 +7,9 @@ public class MainSum2 {
         Integer dobbelsteen = 10;
 
         FSM2a fsm = new FSM2a(hp.getFSMNodes());
-        fsm.run(invoer);
+        System.out.println(fsm.run(invoer));
 
         MCM2b mcm = new MCM2b(hp.getMCMNode(dobbelsteen));
-        mcm.run();
+        System.out.println(mcm.run());
     }
 }

@@ -2,6 +2,7 @@ package Summatieve_opdracht_2;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Random;
 
 class Helpers {
     public ArrayList<Node> getFSMNodes() {
@@ -41,5 +42,10 @@ class Helpers {
             MCMNode.setNextNodes(tempNode);
         }
         return MCMNode;
+    }
+
+    public Float generateKansFactor() {
+        Random rand = new Random();
+        return rand.nextFloat();
     }
 }
