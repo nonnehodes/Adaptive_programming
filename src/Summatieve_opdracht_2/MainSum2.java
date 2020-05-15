@@ -3,7 +3,7 @@ package Summatieve_opdracht_2;
 public class MainSum2 {
     public static void main(String[] args) {
         Helpers hp = new Helpers();
-        String invoer = "abac";
+        String invoer = "BbAcBa";
         Integer dobbelsteen = 10;
 
         FSM2a fsm = new FSM2a(hp.getFSMNodes());

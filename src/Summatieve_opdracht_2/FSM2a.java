@@ -11,17 +11,18 @@ public class FSM2a {
     }
 
     public ArrayList<String> run(String input) {
-       Node huidigeNode = this.nodes.get(0);
-       this.outputNodes.add(huidigeNode.getNaam());
-       for (char ch: input.toLowerCase().toCharArray()) {
-           Node volgendeNode = huidigeNode.getNextNode(ch);
-           if (volgendeNode != null) {
-               this.outputNodes.add(volgendeNode.getNaam());
-               huidigeNode = volgendeNode;
-           } else {
-               break;
-           }
-       }
+        this.outputNodes = new ArrayList<>();
+        Node huidigeNode = this.nodes.get(0);
+        this.outputNodes.add(huidigeNode.getNaam());
+        for (char ch : input.toLowerCase().toCharArray()) {
+            Node volgendeNode = huidigeNode.getNextNode(ch);
+            if (volgendeNode != null) {
+                this.outputNodes.add(volgendeNode.getNaam());
+                huidigeNode = volgendeNode;
+            } else {
+                break;
+            }
+        }
 //       System.out.println(this.outputNodes);
         return this.outputNodes;
     }
