@@ -22,6 +22,6 @@ public class FSM2a {
                break;
            }
        }
-       System.out.print(this.outputNodes);
+       System.out.println(this.outputNodes);
     }
 }

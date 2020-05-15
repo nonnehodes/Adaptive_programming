@@ -23,7 +23,7 @@ public class MCM2b {
         return rand.nextFloat();
     }
 
-    public String run() {
+    public void run() {
         float random = this.generateKansFactor();
         System.out.println("Kans factor: " + random);
         float kansPerNode = 1 / (float) this.MCMNode.getAllNextNodes().size();
@@ -33,13 +33,12 @@ public class MCM2b {
                 lowerbracket += kansPerNode;
             }
             float upperbracket = kansPerNode*(i+1);
-            System.out.println("Lower bracket: " + lowerbracket);
-            System.out.println("Upper bracket: " + upperbracket);
+//            System.out.println("Lower bracket: " + lowerbracket);
+//            System.out.println("Upper bracket: " + upperbracket);
             if (random > lowerbracket && random < upperbracket) {
-                return this.getDobbelGetal(i);
+               System.out.println(this.getDobbelGetal(i));
             }
         }
-        return "";
     }
 }
 
