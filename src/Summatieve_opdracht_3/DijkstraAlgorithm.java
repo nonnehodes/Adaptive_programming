@@ -116,3 +116,5 @@ public class DijkstraAlgorithm {
     }
 
 }
+
+//bron: https://www.vogella.com/tutorials/JavaAlgorithmsDijkstra/article.html
