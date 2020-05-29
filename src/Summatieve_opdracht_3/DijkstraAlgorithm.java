@@ -1,13 +1,6 @@
 package Summatieve_opdracht_3;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class DijkstraAlgorithm {
     private final List<Stap> nodes;
@@ -39,23 +32,21 @@ public class DijkstraAlgorithm {
     }
 
     private void findMinimalDistances(Stap node) {
+//         Berekent voor elke node de minimale kosten. Overschrijft eerder berekende kosten, nieuwe entry is minimum kosten
+//         Als de bestaande in distance groter is dan nieuwe berekende route. Overschrijf key in list, bijv: node 10 > node 9 ipv node 10 > node 1
         List<Stap> adjacentNodes = getNeighbors(node);
         for (Stap target : adjacentNodes) {
-            if (getShortestDistance(target) > getShortestDistance(node)
-                    + getDistance(node, target)) {
-                distance.put(target, getShortestDistance(node)
-                        + getDistance(node, target));
+            if (getShortestDistance(target) > getShortestDistance(node) + getDistance(node, target)) {
+                distance.put(target, getShortestDistance(node) + getDistance(node, target));
                 predecessors.put(target, node);
                 unSettledNodes.add(target);
             }
         }
-
     }
 
     private int getDistance(Stap node, Stap target) {
         for (Edge edge : edges) {
-            if (edge.getVertrek().equals(node)
-                    && edge.getBestemming().equals(target)) {
+            if (edge.getVertrek().equals(node) && edge.getBestemming().equals(target)) {
                 return edge.getKosten();
             }
         }
@@ -73,25 +64,28 @@ public class DijkstraAlgorithm {
         return neighbors;
     }
 
-    private Stap getMinimum(Set<Stap> Stapes) {
+    private Stap getMinimum(Set<Stap> stappen) {
         Stap minimum = null;
-        for (Stap Stap : Stapes) {
+        for (Stap stap : stappen) {
             if (minimum == null) {
-                minimum = Stap;
+                minimum = stap;
             } else {
-                if (getShortestDistance(Stap) < getShortestDistance(minimum)) {
-                    minimum = Stap;
+                stap.setDistance(getShortestDistance(stap));
+                minimum.setDistance((getShortestDistance(minimum)));
+                if (stap.compareTo(minimum) == 1) {
+                    minimum = stap;
                 }
             }
         }
         return minimum;
     }
 
+
     private boolean isSettled(Stap Stap) {
         return settledNodes.contains(Stap);
     }
 
-    private int getShortestDistance(Stap destination) {
+    private Integer getShortestDistance(Stap destination) {
         Integer d = distance.get(destination);
         if (d == null) {
             return Integer.MAX_VALUE;

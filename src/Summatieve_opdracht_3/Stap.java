@@ -3,9 +3,10 @@ package Summatieve_opdracht_3;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Stap {
+public class Stap implements Comparable<Stap> {
     String id;
     String naam;
+    Integer distance;
 
 
     public Stap(String id, String naam) {
@@ -19,6 +20,10 @@ public class Stap {
 
     public String getNaam() {
         return naam;
+    }
+
+    public void setDistance(Integer distance) {
+        this.distance = distance;
     }
 
     @Override
@@ -44,6 +49,18 @@ public class Stap {
         } else if (!id.equals(other.id))
             return false;
         return true;
+    }
+
+    public int compareTo(Stap s) {
+        if (s.equals(this)) {
+            return 0;
+        }
+
+        if (s.distance < this.distance) {
+            return 1;
+        } else {
+            return -1;
+        }
     }
 
     @Override
