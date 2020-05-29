@@ -63,6 +63,7 @@ public class DijkstraAlgorithmTest {
 
         }
     }
+
     private void addLane(String laneId, int sourceLocNo, int destLocNo, int duration, String type) {
         Edge lane = new Edge(laneId, nodes.get(sourceLocNo), nodes.get(destLocNo), duration, type);
         edges.add(lane);
